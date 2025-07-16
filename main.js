@@ -26,7 +26,7 @@ function onClickStep1Button() {
 function onClickStep2Button() {
   buttonDisplayHidden()
   const select = document.getElementById("select")
-  select.innerHTML = "<div id='step2'>STEP 2 : 問題</div>"
+  select.innerHTML = "<div id='step2'>STEP 2 : 問題</div><h2>問題文</h2><button>選択肢1</button><button>選択肢2</button>"
 }
 
 
