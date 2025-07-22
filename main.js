@@ -28,7 +28,7 @@ function onClickLesson1Button() {
 function onClickLesson2Button() {
   buttonDisplayHidden()
   const select = document.getElementById("select")
-  select.innerHTML = "<div id='lesson2'>Lesson 2 : 問題</div><h2>プロジェクトのバージョン管理をローカル環境で行うためのシステムはどちらですか？ <br><br>ヒント：自分のPCにインストールして使うのはどちらでしょう。</h2><button>GitHub</button><button>Git</button>"
+  select.innerHTML = "<div id='lesson2'>Lesson 2 : 問題</div><h2>プロジェクトのバージョン管理をローカル環境で行うためのシステムはどちらですか？ <br><br>ヒント：自分のPCにインストールして使うのはどちらでしょう。</h2><button id='1-incorrect-button'>GitHub</button><button id='1-correct-button'>Git</button>"
 }
 
 
@@ -104,3 +104,6 @@ function stepCloneButton() {
 }
 
 // レッスン 2 問題
+
+
+// レッスン 3 実践形式
