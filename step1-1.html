@@ -9,45 +9,50 @@
 </head>
 
 <body>
-  <h1>Git</h1>
-  <h2>① リポジトリの初期化<span class="green-text"> git init</span></h2>
-  <p>まず、プロジェクトのフォルダをVSCodeで開きます。<br>
-    1. 左側のアクティビティバーから「ソース管理」アイコン (枝分かれのようなマーク) をクリックします。<br>
-    2. 「リポジトリを初期化する」ボタンをクリックすると、そのフォルダがGitリポジトリとして管理されるようになります (<span class="green-text">git init</span>が実行されます)。
-  </p>
-  <h2>② 変更を記録する<span class="green-text"> git add</span>と<span class="green-text"> git commit</span></h2>
+  <div class="content">
+    <h1 class="step1-title">Git</h1>
+    <h2>① リポジトリの初期化<span class="green-text"> git init</span></h2>
+    <p>まず、プロジェクトのフォルダをVSCodeで開きます。<br>
+      1. 左側のアクティビティバーから「ソース管理」アイコン (枝分かれのようなマーク) をクリックします。<br>
+      2. 「リポジトリを初期化する」ボタンをクリックすると、そのフォルダがGitリポジトリとして管理されるようになります (<span class="green-text">git init</span>が実行されます)。
+    </p>
+    <h2>② 変更を記録する<span class="green-text"> git add</span>と<span class="green-text"> git commit</span></h2>
 
-  <p>ファイルの変更を記録する手順です。<br>
-    1. ファイルを変更・保存すると、「ソース管理」ビューの「変更」欄にファイルが表示されます。<br>
-    2. 記録したいファイルの「+」アイコン (変更をステージ) をクリックして、ステージングエリアに移動させます。これは <span class="green-text">git add </span> に相当します。<br>
-    3. 上部のメッセージボックスにコミットメッセージ (例: 最初のコミット) を入力します。<br>
-    4. 「コミット」ボタンをクリックすると、変更がローカルリポジトリに記録されます (<span class="green-text">git commit</span>)。
-  </p>
+    <p>ファイルの変更を記録する手順です。<br>
+      1. ファイルを変更・保存すると、「ソース管理」ビューの「変更」欄にファイルが表示されます。<br>
+      2. 記録したいファイルの「+」アイコン (変更をステージ) をクリックして、ステージングエリアに移動させます。これは <span class="green-text">git add </span> に相当します。<br>
+      3. 上部のメッセージボックスにコミットメッセージ (例: 最初のコミット) を入力します。<br>
+      4. 「コミット」ボタンをクリックすると、変更がローカルリポジトリに記録されます (<span class="green-text">git commit</span>)。
+    </p>
 
-  <h1>GitHubとの連携</h1>
-  <h2>① GitHubへの公開<span class="green-text"> git push</span></h2>
-  <p>1. 「ソース管理」ビューで、「リポジトリを公開」ボタンをクリックします。<br>
-    2. VSCodeがGitHubへのサインインを求めてくるので、ブラウザで認証します。<br>
-    3. リポジトリ名を入力し、公開範囲 (PublicまたはPrivate) を選択して公開します。<br>
-    これで、ローカルのコードがGitHub上にアップロード (<span class="green-text">git push</span>) されます。
-  </p>
+  </div>
+  <div class="content">
+    <h1 class="step1-title">GitHubとの連携</h1>
+    <h2>① GitHubへの公開<span class="green-text"> git push</span></h2>
+    <p>1. 「ソース管理」ビューで、「リポジトリを公開」ボタンをクリックします。<br>
+      2. VSCodeがGitHubへのサインインを求めてくるので、ブラウザで認証します。<br>
+      3. リポジトリ名を入力し、公開範囲 (PublicまたはPrivate) を選択して公開します。<br>
+      これで、ローカルのコードがGitHub上にアップロード (<span class="green-text">git push</span>) されます。
+    </p>
 
-  <h2>② 変更をGitHubにアップロード<span class="green-text"> git push</span"></span></h2>
-  <p>ローカルでコミットした変更をGitHubに反映させます。<br>
-    1. コミットした後、「変更の同期」ボタンをクリックします。<br>
-    2. 確認ダイアログが表示されたら「OK」をクリックすると、ローカルのコミットがGitHubにプッシュされます。
-  </p>
+    <h2>② 変更をGitHubにアップロード<span class="green-text"> git push</span"></span></h2>
+    <p>ローカルでコミットした変更をGitHubに反映させます。<br>
+      1. コミットした後、「変更の同期」ボタンをクリックします。<br>
+      2. 確認ダイアログが表示されたら「OK」をクリックすると、ローカルのコミットがGitHubにプッシュされます。
+    </p>
 
-  <h2>③ GitHubの変更をローカルにダウンロード (プル)<span class="green-text"> git pull</span></h2>
-  <p>他の人が変更した内容など、GitHub上の最新の状態をローカルに持ってきたい場合は、プル をクリックします。これにより、リモートの変更がプル (<span class="green-text"> git pull</span>) されます。</p>
+    <h2>③ GitHubの変更をローカルにダウンロード (プル)<span class="green-text"> git pull</span></h2>
+    <p>他の人が変更した内容など、GitHub上の最新の状態をローカルに持ってきたい場合は、プル をクリックします。これにより、リモートの変更がプル (<span class="green-text"> git
+        pull</span>) されます。</p>
 
-  <h2>④ 既存のGitHubリポジトリを使う <span class="green-text"> git clone</span></h2>
-  <p>すでにGitHub上に存在するリポジトリをローカルに持ってきたい場合はクローンします。<br>
-    1. VSCodeを開き、Ctrl+Shift+P (macOS: Cmd+Shift+P) でコマンドパレットを開きます。<br>
-    2. <span class="green-text"> Git: Clone</span> と入力して選択します。<br>
-    3. クローンしたいGitHubリポジトリのURLを貼り付けます。<br>
-    4. ローカルのどこに保存するかを選択すると、リポジトリのダウンロードが始まります。
-  </p>
+    <h2>④ 既存のGitHubリポジトリを使う <span class="green-text"> git clone</span></h2>
+    <p>すでにGitHub上に存在するリポジトリをローカルに持ってきたい場合はクローンします。<br>
+      1. VSCodeを開き、Ctrl+Shift+P (macOS: Cmd+Shift+P) でコマンドパレットを開きます。<br>
+      2. <span class="green-text"> Git: Clone</span> と入力して選択します。<br>
+      3. クローンしたいGitHubリポジトリのURLを貼り付けます。<br>
+      4. ローカルのどこに保存するかを選択すると、リポジトリのダウンロードが始まります。
+    </p>
+  </div>
 
   <a href="menu.html">menuへ戻る</a>
 </body>

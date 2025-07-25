@@ -7,3 +7,35 @@ body {
 .green-text {
   color: green;
 }
+
+.menu {
+  color: aliceblue;
+  font-size: 3rem;
+}
+
+a {
+  color: aliceblue;
+  font-size: 2rem;
+}
+
+.div-menu {
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 30%;
+}
+
+.step1-title {
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.content {
+  margin: 50px 20px 50px 20px;
+}
+
+.index-page {
+  text-align: center;
+  margin-top: 30%;
+}
