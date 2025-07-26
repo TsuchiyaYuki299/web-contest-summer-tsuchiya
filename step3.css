@@ -1,10 +1,23 @@
 body {
-  background-color: #1e1e1e;
+  background-color: #252526;
   color: aliceblue;
-  
+  display: flex;
 }
 
 .activity {
   display: flex;
   flex-direction: column;
+  background-color: #1e1e1e;
+}
+
+.side {
+background-color: #1e1e1e;
+}
+
+.edit {
+margin-left: 30%;
+}
+
+.status {
+  margin-top: 98%;
 }
