@@ -8,22 +8,32 @@
   </head>
   <body>
     <div class="activity">
-      <img src="../images/explorer.png" alt="エクスプローラーの画像" width="40px"/>
-    <img src="../images/search.png" alt="検索の画像" width="40px" />
-    <img src="../images/source-control.png" alt="ソース管理の画像" width="40px"/>
-    <img src="../images/Extensions.png" alt="拡張機能の画像"  width="40px"/>
+      <img
+        src="../images/explorer.png"
+        alt="エクスプローラーの画像"
+        width="40px"
+      />
+      <img src="../images/search.png" alt="検索の画像" width="40px" />
+      <img
+        id="source-control-button"
+        src="../images/source-control.png"
+        alt="ソース管理の画像"
+        width="40px"
+      />
+      <img src="../images/Extensions.png" alt="拡張機能の画像" width="40px" />
     </div>
 
-    <div class="side"><p>ここはサイドバーだよ</p>
+    <div class="side">
+      <p>ここはサイドバーだよ</p>
       <p>ファイルが並んでいるよ</p>
     </div>
 
     <div class="edit">
-        <p>ここにエディターを表示</p>
- 
+      <p id="problem-text"></p>
     </div>
-       <div class="status">
-        <p>ここはステータスバーだよ</p>
-       </div>
+    <div class="status">
+      <p>ここはステータスバーだよ</p>
+    </div>
+    <script src="../step3.js"></script>
   </body>
 </html>
