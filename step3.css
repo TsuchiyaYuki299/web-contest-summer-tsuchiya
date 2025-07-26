@@ -12,6 +12,7 @@ body {
 
 .side {
 background-color: #1e1e1e;
+
 }
 
 .edit {
@@ -20,6 +21,18 @@ margin-left: 20%;
 
 .status {
   margin-top: 97%;
+}
+
+button {
+  background-color: #1177bb;
+  color: aliceblue;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #0e639c;
 }
 
 /* CSSでアニメーションを定義 */
