@@ -1,7 +1,6 @@
 "use strict";
 
 const sideText = document.getElementById("side-text");
-  
 
 const problemElement = document.getElementById("problem-text");
 problemElement.textContent =
@@ -19,7 +18,7 @@ document
     this.classList.remove("highlight-hint");
     clearTimeout(hintTimer);
     // サイドバーの内容をソース管理版に変更
-    
+
     sideText.innerHTML =
       "ソース管理 <br> リポジトリ <br> 変更 <br> <button id='init-button' onclick='init()'>リポジトリを初期化する</button> <br> <div id='correct-img'></div>";
   });
@@ -35,35 +34,34 @@ function init() {
   const correctImg = document.createElement("img");
   const correctP = document.createElement("p");
 
-
   // 作成したimg要素に、どの画像を表示するか設定する
   correctImg.src = "images/animal_quiz_usagi_maru.png";
 
   correctImg.alt = "正解";
   correctImg.id = "usagi-img";
 
-correctP.innerHTML = "うさちゃんをクリックして次の問題へ！";
+  correctP.innerHTML = "うさちゃんをクリックして次の問題へ！";
 
   //  画像を表示する場所に作成したimg要素を追加する
   correctImgArea.appendChild(correctImg);
-  
-correctImgArea.appendChild(correctP);
-  
-correctImgArea.addEventListener("click", function () {
-problemElement.textContent = "ステージングしてからコミットしてみよう！（git add と git commit）";
-  const initButton = document.getElementById("init-button");
-  initButton.innerText = "✓コミット";
-  correctImgArea.remove();
-  const plusElement = document.createElement('p');
-  plusElement.id = "staging-text";
-  plusElement.innerHTML ="<span id='staging-text-plus'>+</span>";
-  sideText.appendChild(plusElement);
 
-  const staging = document.getElementById("staging-text-plus");
-  staging.addEventListener("click", function () {
-  sideText.innerHTML = "ソース管理 <br> リポジトリ <br> 変更 <br> <button id='init-button' onclick='init()'>✓コミット</button> <br> <div id='correct-img'></div>ステージされている変更 ◯個"
-});
+  correctImgArea.appendChild(correctP);
 
-}); 
+  correctImgArea.addEventListener("click", function () {
+    problemElement.textContent =
+      "ステージングしてからコミットしてみよう！（git add と git commit）";
+    const initButton = document.getElementById("init-button");
+    initButton.innerText = "✓コミット";
+    correctImgArea.remove();
+    const plusElement = document.createElement("p");
+    plusElement.id = "staging-text";
+    plusElement.innerHTML = "<span id='staging-text-plus'>+</span>";
+    sideText.appendChild(plusElement);
+
+    const staging = document.getElementById("staging-text-plus");
+    staging.addEventListener("click", function () {
+      sideText.innerHTML =
+        "ソース管理 <br> リポジトリ <br> 変更 <br> <button id='init-button' onclick='init()'>✓コミット</button> <br> <div id='correct-img'></div>ステージされている変更 ◯個";
+    });
+  });
 }
-
