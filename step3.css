@@ -35,6 +35,9 @@ button:hover {
   background-color: #0e639c;
 }
 
+
+
+
 /* CSSでアニメーションを定義 */
 @keyframes glowing {
   0% { box-shadow: 0 0 5px #3a7cde; }

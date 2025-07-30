@@ -50,15 +50,20 @@ correctP.innerHTML = "うさちゃんをクリックして次の問題へ！";
 correctImgArea.appendChild(correctP);
   
 correctImgArea.addEventListener("click", function () {
-problemElement.textContent = "ステージングしてからコミットしてしよう！（git add と git commit）";
+problemElement.textContent = "ステージングしてからコミットしてみよう！（git add と git commit）";
   const initButton = document.getElementById("init-button");
   initButton.innerText = "✓コミット";
   correctImgArea.remove();
-  sideText.append("+");
+  const plusElement = document.createElement('p');
+  plusElement.id = "staging-text";
+  plusElement.innerHTML ="<span id='staging-text-plus'>+</span>";
+  sideText.appendChild(plusElement);
+
+  const staging = document.getElementById("staging-text-plus");
+  staging.addEventListener("click", function () {
+  sideText.innerHTML = "ソース管理 <br> リポジトリ <br> 変更 <br> <button id='init-button' onclick='init()'>✓コミット</button> <br> <div id='correct-img'></div>ステージされている変更 ◯個"
+});
+
 }); 
 }
 
-sideText("+").addEventListener("click", function () {
-  sideText.append("");
-
-});
