@@ -1,24 +1,18 @@
 "use strict";
 
 const sideText = document.getElementById("side-text");
-
 const problemElement = document.getElementById("problem-text");
-problemElement.textContent =
-  "左のメニューからソース管理を選んで、リポジトリを初期化しよう！(git init)";
 
-const hintTimer = setTimeout(() => {
-  // タイマーの処理の中
+const hintTimerInit = setTimeout(() => {
   const correctButton = document.getElementById("source-control-button");
-  correctButton.classList.add("highlight-hint"); // ボタンにヒントのクラスを追加
+  correctButton.classList.add("highlight-hint");
 }, 6000);
 
 document
   .getElementById("source-control-button")
   .addEventListener("click", function () {
     this.classList.remove("highlight-hint");
-    clearTimeout(hintTimer);
-    // サイドバーの内容をソース管理版に変更
-
+    clearTimeout(hintTimerInit);
     sideText.innerHTML =
       "ソース管理 <br> リポジトリ <br> 変更 <br> <button id='init-button' onclick='init()'>リポジトリを初期化する</button> <br> <div id='correct-img'></div>";
   });
@@ -27,24 +21,17 @@ function init() {
   if (document.getElementById("usagi-img") !== null) {
     return;
   }
-  // 画像を表示する場所を見つける
-  const correctImgArea = document.getElementById("correct-img");
 
-  // 新しいimg要素を作成する
+  const correctImgArea = document.getElementById("correct-img");
   const correctImg = document.createElement("img");
   const correctP = document.createElement("p");
 
-  // 作成したimg要素に、どの画像を表示するか設定する
   correctImg.src = "images/animal_quiz_usagi_maru.png";
-
   correctImg.alt = "正解";
   correctImg.id = "usagi-img";
 
   correctP.innerHTML = "うさちゃんをクリックして次の問題へ！";
-
-  //  画像を表示する場所に作成したimg要素を追加する
   correctImgArea.appendChild(correctImg);
-
   correctImgArea.appendChild(correctP);
 
   correctImgArea.addEventListener("click", function () {
@@ -61,7 +48,26 @@ function init() {
     const staging = document.getElementById("staging-text-plus");
     staging.addEventListener("click", function () {
       sideText.innerHTML =
-        "ソース管理 <br> リポジトリ <br> 変更 <br> <button id='init-button' onclick='init()'>✓コミット</button> <br> <div id='correct-img'></div>ステージされている変更 ◯個";
+        "ソース管理 <br> リポジトリ <br> 変更 <br> <button id='commit-button' onclick='commit()'>✓コミット</button> <br> <div id='correct-img'></div>ステージされている変更 ◯個";
     });
   });
+}
+
+function commit() {
+  sideText.innerHTML =
+    "ソース管理 <br> リポジトリ <br> 変更<br> <div id='correct-img'></div>";
+  const correctImgArea = document.getElementById("correct-img");
+  if (correctImgArea.querySelector("#kuma-img")) {
+    return;
+  }
+  const correctImg = document.createElement("img");
+  const correctP = document.createElement("p");
+  correctImg.src = "images/animal_quiz_kuma_maru.png";
+  correctImg.alt = "正解";
+  correctImg.id = "kuma-img";
+  correctP.innerHTML = "やったね！Gitを覚えたよ！";
+  correctImgArea.appendChild(correctImg);
+  correctImgArea.appendChild(correctP);
+
+  problemElement.textContent = "すべてのステップが完了しました！おめでとう！";
 }

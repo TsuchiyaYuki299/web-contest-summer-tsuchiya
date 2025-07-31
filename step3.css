@@ -11,12 +11,11 @@ body {
 }
 
 .side {
-background-color: #1e1e1e;
-
+  background-color: #1e1e1e;
 }
 
 .edit {
-margin-left: 20%;
+  margin-left: 20%;
 }
 
 .status {
@@ -35,14 +34,17 @@ button:hover {
   background-color: #0e639c;
 }
 
-
-
-
 /* CSSでアニメーションを定義 */
 @keyframes glowing {
-  0% { box-shadow: 0 0 5px #3a7cde; }
-  50% { box-shadow: 0 0 20px #3a7cde; }
-  100% { box-shadow: 0 0 5px #3a7cde; }
+  0% {
+    box-shadow: 0 0 20px #3a7cde;
+  }
+  50% {
+    box-shadow: 0 0 50px aliceblue;
+  }
+  100% {
+    box-shadow: 0 0 20px #3a7cde;
+  }
 }
 
 /* ヒント用のクラス */
