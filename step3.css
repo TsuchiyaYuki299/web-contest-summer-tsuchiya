@@ -34,6 +34,11 @@ button:hover {
   background-color: #0e639c;
 }
 
+input {
+  background-color: #595959;
+  color: rgb(255, 255, 255);
+}
+
 /* CSSでアニメーションを定義 */
 @keyframes glowing {
   0% {

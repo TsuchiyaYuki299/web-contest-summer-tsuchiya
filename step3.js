@@ -48,18 +48,25 @@ function init() {
     const staging = document.getElementById("staging-text-plus");
     staging.addEventListener("click", function () {
       sideText.innerHTML =
-        "ソース管理 <br> リポジトリ <br> 変更 <br> <button id='commit-button' onclick='commit()'>✓コミット</button> <br> <div id='correct-img'></div>ステージされている変更 ◯個";
+        "ソース管理 <br> リポジトリ <br> 変更 <br> <input type='text' id='commitMessage' placeholder='コミットメッセージを入力してください'> <br> <button id='commit-button' onclick='commit()'>✓コミット</button> <br> <div id='correct-img'></div>ステージされている変更 ◯個";
     });
   });
 }
 
 function commit() {
+  const commitMessage = document.getElementById("commitMessage").value;
+
+  if (commitMessage === "") {
+    alert("コミットメッセージを入力してください。");
+    return;
+  }
   sideText.innerHTML =
     "ソース管理 <br> リポジトリ <br> 変更<br> <div id='correct-img'></div>";
   const correctImgArea = document.getElementById("correct-img");
   if (correctImgArea.querySelector("#kuma-img")) {
     return;
   }
+  
   const correctImg = document.createElement("img");
   const correctP = document.createElement("p");
   correctImg.src = "images/animal_quiz_kuma_maru.png";
@@ -70,4 +77,5 @@ function commit() {
   correctImgArea.appendChild(correctP);
 
   problemElement.textContent = "すべてのステップが完了しました！おめでとう！";
+
 }
