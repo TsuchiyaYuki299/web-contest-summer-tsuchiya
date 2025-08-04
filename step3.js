@@ -74,7 +74,7 @@ function commit() {
   sideText.innerHTML =
     "ソース管理 <br> リポジトリ <br> 変更<br> <div id='correct-img'></div>";
   const correctImgArea = document.getElementById("correct-img");
-  // 二度押し防止
+  // 二重追加防止（くまさんの画像がすでにある場合）
   if (correctImgArea.querySelector("#kuma-img")) {
     return;
   }
