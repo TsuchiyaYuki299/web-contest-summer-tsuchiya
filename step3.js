@@ -1,27 +1,34 @@
 "use strict";
 
+// サイドバーと問題文の要素を取得
 const sideText = document.getElementById("side-text");
 const problemElement = document.getElementById("problem-text");
 
+// 6秒後にヒントを点灯させるタイマーをセット
 const hintTimerInit = setTimeout(() => {
   const correctButton = document.getElementById("source-control-button");
   correctButton.classList.add("highlight-hint");
 }, 6000);
 
+// 「ソース管理」ボタンがクリックされたときの処理
 document
   .getElementById("source-control-button")
   .addEventListener("click", function () {
     this.classList.remove("highlight-hint");
     clearTimeout(hintTimerInit);
+    // サイドバーに初期化ボタンを表示
     sideText.innerHTML =
       "ソース管理 <br> リポジトリ <br> 変更 <br> <button id='init-button' onclick='init()'>リポジトリを初期化する</button> <br> <div id='correct-img'></div>";
   });
 
+  // 「リポジトリを初期化する」ボタンを押したときの処理
 function init() {
+  // 二度押し防止
   if (document.getElementById("usagi-img") !== null) {
     return;
   }
 
+  // 正解のうさちゃん画像とメッセージを表示
   const correctImgArea = document.getElementById("correct-img");
   const correctImg = document.createElement("img");
   const correctP = document.createElement("p");
@@ -34,17 +41,21 @@ function init() {
   correctImgArea.appendChild(correctImg);
   correctImgArea.appendChild(correctP);
 
+  // うさちゃんをクリックしたら次のステップへ
   correctImgArea.addEventListener("click", function () {
     problemElement.textContent =
       "ステージングしてからコミットしてみよう！（git add と git commit）";
     const initButton = document.getElementById("init-button");
     initButton.innerText = "✓コミット";
     correctImgArea.remove();
+
+    // ステージングボタン（＋）を追加
     const plusElement = document.createElement("p");
     plusElement.id = "staging-text";
     plusElement.innerHTML = "<span id='staging-text-plus'>+</span>";
     sideText.appendChild(plusElement);
 
+    // ステージングボタン（＋）がクリックされたときの処理
     const staging = document.getElementById("staging-text-plus");
     staging.addEventListener("click", function () {
       sideText.innerHTML =
@@ -63,6 +74,7 @@ function commit() {
   sideText.innerHTML =
     "ソース管理 <br> リポジトリ <br> 変更<br> <div id='correct-img'></div>";
   const correctImgArea = document.getElementById("correct-img");
+  // 二度押し防止
   if (correctImgArea.querySelector("#kuma-img")) {
     return;
   }
@@ -76,5 +88,6 @@ function commit() {
   correctImgArea.appendChild(correctImg);
   correctImgArea.appendChild(correctP);
 
+  // 完了メッセージ
   problemElement.textContent = "すべてのステップが完了しました！おめでとう！";
 }
