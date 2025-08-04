@@ -66,7 +66,7 @@ function commit() {
   if (correctImgArea.querySelector("#kuma-img")) {
     return;
   }
-  
+
   const correctImg = document.createElement("img");
   const correctP = document.createElement("p");
   correctImg.src = "images/animal_quiz_kuma_maru.png";
@@ -77,5 +77,4 @@ function commit() {
   correctImgArea.appendChild(correctP);
 
   problemElement.textContent = "すべてのステップが完了しました！おめでとう！";
-
 }
