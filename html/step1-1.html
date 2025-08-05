@@ -10,12 +10,19 @@
 
 <body>
   <div class="content">
-    <h1 class="step1-title">Git</h1>
+    <h1 class="step1-title">Git・GitHubとの連携</h1>
     <h2>① リポジトリの初期化<span class="green-text"> git init</span></h2>
     <p>まず、プロジェクトのフォルダをVSCodeで開きます。<br>
       1. 左側のアクティビティバーから「ソース管理」アイコン (枝分かれのようなマーク) をクリックします。<br>
       2. 「リポジトリを初期化する」ボタンをクリックすると、そのフォルダがGitリポジトリとして管理されるようになります (<span class="green-text">git init</span>が実行されます)。
     </p>
+    <p class="red-text">ですが、GitHubにも公開する場合は、もっと簡単な方法があります。一度に、初期化もして、GitHubに公開もしてしまう方法です。</p>
+    <p>1. 「ソース管理」ビューで、「リポジトリを公開」ボタンをクリックします。<br>
+      2. VSCodeがGitHubへのサインインを求めてくるので、ブラウザで認証します。<br>
+      3. リポジトリ名を入力し、公開範囲 (PublicまたはPrivate) を選択して公開します。<br>
+      これで、ローカルのコードがGitHub上にアップロード (<span class="green-text">git push</span>) されます。
+    </p>
+
     <h2>② 変更を記録する<span class="green-text"> git add</span>と<span class="green-text"> git commit</span></h2>
 
     <p>ファイルの変更を記録する手順です。<br>
@@ -27,14 +34,7 @@
 
   </div>
   <div class="content">
-    <h1 class="step1-title">GitHubとの連携</h1>
-    <h2>① GitHubへの公開<span class="green-text"> git push</span></h2>
-    <p>1. 「ソース管理」ビューで、「リポジトリを公開」ボタンをクリックします。<br>
-      2. VSCodeがGitHubへのサインインを求めてくるので、ブラウザで認証します。<br>
-      3. リポジトリ名を入力し、公開範囲 (PublicまたはPrivate) を選択して公開します。<br>
-      これで、ローカルのコードがGitHub上にアップロード (<span class="green-text">git push</span>) されます。
-    </p>
-
+    
     <h2>② 変更をGitHubにアップロード<span class="green-text"> git push</span"></span></h2>
     <p>ローカルでコミットした変更をGitHubに反映させます。<br>
       1. コミットした後、「変更の同期」ボタンをクリックします。<br>

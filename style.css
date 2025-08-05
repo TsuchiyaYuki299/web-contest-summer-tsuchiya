@@ -8,6 +8,10 @@ body {
   color: green;
 }
 
+.red-text {
+  color: red;
+}
+
 .menu {
   color: aliceblue;
   font-size: 3rem;
