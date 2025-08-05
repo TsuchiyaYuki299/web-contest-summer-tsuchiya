@@ -16,13 +16,13 @@ document
   .addEventListener("click", function () {
     this.classList.remove("highlight-hint");
     clearTimeout(hintTimerInit);
-    // サイドバーに初期化ボタンを表示
+    // サイドバーに初期化ボタンとGitHubに公開ボタンを表示
     sideText.innerHTML =
-      "ソース管理 <br> リポジトリ <br> 変更 <br> <button id='init-button' onclick='init()'>リポジトリを初期化する</button> <br> <div id='correct-img'></div>";
+      "ソース管理 <br> リポジトリ <br> 変更 <br> <button id='init-button' onclick='init()'>リポジトリを初期化する</button><br><br><br> <button id='github-button' onclick='github()'>GitHubに公開</button> <br> <div id='correct-img'></div>";
   });
 
-  // 「リポジトリを初期化する」ボタンを押したときの処理
-function init() {
+  // 「githubに公開」ボタンを押したときの処理
+function github() {
   // 二度押し防止
   if (document.getElementById("usagi-img") !== null) {
     return;
@@ -48,9 +48,10 @@ function init() {
     const initButton = document.getElementById("init-button");
     initButton.innerText = "✓コミット";
     correctImgArea.remove();
+    document.getElementById("github-button").remove();
 
     // ステージングボタン（＋）を追加
-    const plusElement = document.createElement("p");
+    const plusElement = document.createElement("h1");
     plusElement.id = "staging-text";
     plusElement.innerHTML = "<span id='staging-text-plus'>+</span>";
     sideText.appendChild(plusElement);
